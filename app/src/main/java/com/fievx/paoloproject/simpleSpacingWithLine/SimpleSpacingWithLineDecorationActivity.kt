@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.fievx.paolo.spacingDecoration.DumbSpacingDecoration
 import com.fievx.paolo.Paolo
 import com.fievx.paolo.drawingDecoration.LineDrawingDecoration
+import com.fievx.paolo.drawingDecoration.PaintingDecoration
+import com.fievx.paolo.selectiveDecoration.SkippingSelector
 import com.fievx.paoloproject.R
 import com.fievx.paoloproject.adapter.AllTextsAdapter
 
@@ -48,6 +50,18 @@ class SimpleSpacingWithLineDecorationActivity : AppCompatActivity() {
                         resources.getDimensionPixelSize(R.dimen.spacing_default)
                     )
                 )
+            })
+
+            addItemDecoration(Paolo().apply {
+                drawingDecorations.add(
+                    PaintingDecoration(
+                        ContextCompat.getColor(
+                            this@SimpleSpacingWithLineDecorationActivity,
+                            R.color.colorAccent
+                        )
+                    )
+                )
+                selectors.add(SkippingSelector(1, 2))
             })
         }
     }

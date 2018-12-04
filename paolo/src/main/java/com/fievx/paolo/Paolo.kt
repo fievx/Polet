@@ -4,7 +4,7 @@ import android.graphics.Canvas
 import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.fievx.paolo.selectivedecoration.SelectiveDecoration
+import com.fievx.paolo.selectiveDecoration.SelectiveDecoration
 
 class Paolo: RecyclerView.ItemDecoration(), SelectiveDecoration {
 

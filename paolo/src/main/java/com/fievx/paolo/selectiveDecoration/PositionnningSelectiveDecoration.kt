@@ -1,4 +1,4 @@
-package com.fievx.paolo.selectivedecoration
+package com.fievx.paolo.selectiveDecoration
 
 interface PositionnningSelectiveDecoration: SelectiveDecoration {
     var includeFirst: Boolean
