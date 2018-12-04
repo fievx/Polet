@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.fievx.paolo.spacingDecoration.DumbSpacingDecoration
-import com.fievx.paolo.DecorationComposer
+import com.fievx.paolo.Paolo
 import com.fievx.paoloproject.R
 import com.fievx.paoloproject.adapter.AllTextsAdapter
 
@@ -22,7 +22,7 @@ class SimpleSpacingDecorationActivity: AppCompatActivity() {
             adapter = AllTextsAdapter()
 
             //Decoration starts here
-            addItemDecoration(DecorationComposer().apply {
+            addItemDecoration(Paolo().apply {
                 sizingDecoration = DumbSpacingDecoration(resources.getDimensionPixelSize(R.dimen.spacing_default))
             })
         }

@@ -6,9 +6,8 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.fievx.paolo.spacingDecoration.DumbSpacingDecoration
-import com.fievx.paolo.DecorationComposer
+import com.fievx.paolo.Paolo
 import com.fievx.paolo.drawingDecoration.LineDrawingDecoration
-import com.fievx.paolo.drawingDecoration.PaintingDecoration
 import com.fievx.paoloproject.R
 import com.fievx.paoloproject.adapter.AllTextsAdapter
 
@@ -27,7 +26,7 @@ class SimpleSpacingWithLineDecorationActivity : AppCompatActivity() {
             adapter = AllTextsAdapter()
 
             //Decoration starts here
-            addItemDecoration(DecorationComposer().apply {
+            addItemDecoration(Paolo().apply {
                 sizingDecoration = DumbSpacingDecoration(resources.getDimensionPixelSize(R.dimen.spacing_default))
                 drawingDecorations.add(
                     LineDrawingDecoration(

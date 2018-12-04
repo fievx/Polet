@@ -6,7 +6,7 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.fievx.paolo.selectivedecoration.SelectiveDecoration
 
-class DecorationComposer: RecyclerView.ItemDecoration(), SelectiveDecoration {
+class Paolo: RecyclerView.ItemDecoration(), SelectiveDecoration {
 
     var sizingDecoration : SizingDecoration? = null
     val drawingDecorations = mutableListOf<DrawingDecoration>()
