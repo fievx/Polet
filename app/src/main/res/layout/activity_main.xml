@@ -26,4 +26,10 @@
             android:id="@+id/bt_conditional_decoration"
             android:text="Conditional decoration"/>
 
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bt_complex_decoration"
+            android:text="Complex decoration"/>
+
 </LinearLayout>

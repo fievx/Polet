@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.fievx.polet.spacingDecoration.DumbSpacingDecoration
+import com.fievx.polet.spacingDecoration.SimpleSpacingDecoration
 import com.fievx.polet.Polet
 import com.fievx.polet.drawingDecoration.LineDrawingDecoration
 import com.fievx.polet.drawingDecoration.PaintingDecoration
@@ -34,7 +34,7 @@ class SimpleSpacingWithLineDecorationActivity : AppCompatActivity() {
 
             //Decoration starts here
             addItemDecoration(Polet().apply {
-                sizingDecoration = DumbSpacingDecoration(defaultSpacing)
+                sizingDecoration = SimpleSpacingDecoration(defaultSpacing)
                 drawingDecorations.add(
                     LineDrawingDecoration(
                         black,
@@ -56,7 +56,7 @@ class SimpleSpacingWithLineDecorationActivity : AppCompatActivity() {
                         accentColor
                     )
                 )
-                selectors.add(SkippingSelector(1, 2))
+                selectiveDecoration.add(SkippingSelector(1, 2))
             })
         }
     }

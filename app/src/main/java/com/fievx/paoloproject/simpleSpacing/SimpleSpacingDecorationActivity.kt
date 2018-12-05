@@ -4,10 +4,11 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.fievx.polet.spacingDecoration.DumbSpacingDecoration
+import com.fievx.polet.spacingDecoration.SimpleSpacingDecoration
 import com.fievx.polet.Polet
 import com.fievx.paoloproject.R
 import com.fievx.paoloproject.adapter.AllTextsAdapter
+import com.fievx.polet.selectiveDecoration.PositionningSelector
 
 class SimpleSpacingDecorationActivity: AppCompatActivity() {
 
@@ -22,8 +23,17 @@ class SimpleSpacingDecorationActivity: AppCompatActivity() {
             adapter = AllTextsAdapter()
 
             //Decoration starts here
+            val spacing = resources.getDimensionPixelSize(R.dimen.spacing_default)
             addItemDecoration(Polet().apply {
-                sizingDecoration = DumbSpacingDecoration(resources.getDimensionPixelSize(R.dimen.spacing_default))
+                sizingDecoration = SimpleSpacingDecoration(spacing)
+            })
+
+            addItemDecoration(Polet().apply {
+                sizingDecoration = SimpleSpacingDecoration(t = spacing * 3)
+                selectiveDecoration.add(PositionningSelector().apply {
+                    excludeAll()
+                    includeFirst = true
+                })
             })
         }
     }

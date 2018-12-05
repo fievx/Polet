@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.fievx.paoloproject.complexDecoration.ComplexDecorationActivity
 import com.fievx.paoloproject.conditionnalDecoration.ConditionalDecorationActivity
 import com.fievx.paoloproject.simpleSpacing.SimpleSpacingDecorationActivity
 import com.fievx.paoloproject.simpleSpacingWithLine.SimpleSpacingWithLineDecorationActivity
@@ -24,6 +25,10 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.bt_conditional_decoration).setOnClickListener {
             startActivity(Intent(this, ConditionalDecorationActivity::class.java))
+        }
+
+        findViewById<Button>(R.id.bt_complex_decoration).setOnClickListener {
+            startActivity(Intent(this, ComplexDecorationActivity::class.java))
         }
     }
 }
