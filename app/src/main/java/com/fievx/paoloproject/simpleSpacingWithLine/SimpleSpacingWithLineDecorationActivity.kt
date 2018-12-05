@@ -5,11 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.fievx.paolo.spacingDecoration.DumbSpacingDecoration
-import com.fievx.paolo.Paolo
-import com.fievx.paolo.drawingDecoration.LineDrawingDecoration
-import com.fievx.paolo.drawingDecoration.PaintingDecoration
-import com.fievx.paolo.selectiveDecoration.SkippingSelector
+import com.fievx.polet.spacingDecoration.DumbSpacingDecoration
+import com.fievx.polet.Polet
+import com.fievx.polet.drawingDecoration.LineDrawingDecoration
+import com.fievx.polet.drawingDecoration.PaintingDecoration
+import com.fievx.polet.selectiveDecoration.SkippingSelector
 import com.fievx.paoloproject.R
 import com.fievx.paoloproject.adapter.AllTextsAdapter
 
@@ -28,7 +28,7 @@ class SimpleSpacingWithLineDecorationActivity : AppCompatActivity() {
             adapter = AllTextsAdapter()
 
             //Decoration starts here
-            addItemDecoration(Paolo().apply {
+            addItemDecoration(Polet().apply {
                 sizingDecoration = DumbSpacingDecoration(resources.getDimensionPixelSize(R.dimen.spacing_default))
                 drawingDecorations.add(
                     LineDrawingDecoration(
@@ -52,7 +52,7 @@ class SimpleSpacingWithLineDecorationActivity : AppCompatActivity() {
                 )
             })
 
-            addItemDecoration(Paolo().apply {
+            addItemDecoration(Polet().apply {
                 drawingDecorations.add(
                     PaintingDecoration(
                         ContextCompat.getColor(

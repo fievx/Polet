@@ -1,12 +1,12 @@
-package com.fievx.paolo
+package com.fievx.polet
 
 import android.graphics.Canvas
 import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.fievx.paolo.selectiveDecoration.SelectiveDecoration
+import com.fievx.polet.selectiveDecoration.SelectiveDecoration
 
-class Paolo: RecyclerView.ItemDecoration(), SelectiveDecoration {
+class Polet: RecyclerView.ItemDecoration(), SelectiveDecoration {
 
     var sizingDecoration : SizingDecoration? = null
     val drawingDecorations = mutableListOf<DrawingDecoration>()
