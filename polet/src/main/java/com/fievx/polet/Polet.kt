@@ -6,6 +6,9 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.fievx.polet.selectiveDecoration.SelectiveDecoration
 
+/**
+ * Entry point to create a decoration.
+ */
 class Polet: RecyclerView.ItemDecoration(), SelectiveDecoration {
 
     var sizingDecoration : SizingDecoration? = null

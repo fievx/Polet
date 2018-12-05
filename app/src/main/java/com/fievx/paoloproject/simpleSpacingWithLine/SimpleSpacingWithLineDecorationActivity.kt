@@ -19,6 +19,10 @@ class SimpleSpacingWithLineDecorationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler_view)
 
+        val defaultSpacing = resources.getDimensionPixelSize(R.dimen.spacing_default)
+        val black = ContextCompat.getColor(this, R.color.text_default_black)
+        val accentColor = ContextCompat.getColor(this, R.color.colorAccent)
+
         findViewById<RecyclerView>(R.id.rv).apply {
             layoutManager = LinearLayoutManager(
                 this@SimpleSpacingWithLineDecorationActivity,
@@ -27,27 +31,21 @@ class SimpleSpacingWithLineDecorationActivity : AppCompatActivity() {
             )
             adapter = AllTextsAdapter()
 
+
             //Decoration starts here
             addItemDecoration(Polet().apply {
-                sizingDecoration = DumbSpacingDecoration(resources.getDimensionPixelSize(R.dimen.spacing_default))
+                sizingDecoration = DumbSpacingDecoration(defaultSpacing)
                 drawingDecorations.add(
                     LineDrawingDecoration(
-                        ContextCompat.getColor(
-                            this@SimpleSpacingWithLineDecorationActivity,
-                            R.color.text_default_black
-                        ),
+                        black,
                         LineDrawingDecoration.Position.bottom,
                         resources.getDimensionPixelSize(R.dimen.line_height)
                     )
                 )
                 drawingDecorations.add(
-                    LineDrawingDecoration(
-                        ContextCompat.getColor(
-                            this@SimpleSpacingWithLineDecorationActivity,
-                            R.color.colorAccent
-                        ),
+                    LineDrawingDecoration(accentColor,
                         LineDrawingDecoration.Position.right,
-                        resources.getDimensionPixelSize(R.dimen.spacing_default)
+                        defaultSpacing
                     )
                 )
             })
@@ -55,10 +53,7 @@ class SimpleSpacingWithLineDecorationActivity : AppCompatActivity() {
             addItemDecoration(Polet().apply {
                 drawingDecorations.add(
                     PaintingDecoration(
-                        ContextCompat.getColor(
-                            this@SimpleSpacingWithLineDecorationActivity,
-                            R.color.colorAccent
-                        )
+                        accentColor
                     )
                 )
                 selectors.add(SkippingSelector(1, 2))

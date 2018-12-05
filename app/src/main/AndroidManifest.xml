@@ -18,6 +18,7 @@
         </activity>
         <activity android:name=".simpleSpacing.SimpleSpacingDecorationActivity"/>
         <activity android:name=".simpleSpacingWithLine.SimpleSpacingWithLineDecorationActivity"/>
+        <activity android:name=".conditionnalDecoration.ConditionalDecorationActivity"/>
     </application>
 
 </manifest>

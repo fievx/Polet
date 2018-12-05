@@ -8,6 +8,11 @@ import androidx.annotation.ColorInt
 import androidx.recyclerview.widget.RecyclerView
 import com.fievx.polet.DrawingDecoration
 
+/**
+ * Draws a line a either top, bottom, left or right position.
+ * You can add multiple LineDrawingDecoration to the drawingDecoration list of you Polet to have multiple lines drawn if
+ * needed.
+ */
 class LineDrawingDecoration (@ColorInt color: Int, val position: Position, val thickness: Int): DrawingDecoration {
     private val paint = Paint().apply {
         this.color = color
