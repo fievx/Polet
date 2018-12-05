@@ -13,7 +13,7 @@ class Polet: RecyclerView.ItemDecoration(), SelectiveDecoration {
 
     var sizingDecoration : SizingDecoration? = null
     val drawingDecorations = mutableListOf<DrawingDecoration>()
-    val selectors = mutableListOf<SelectiveDecoration>()
+    val selectiveDecoration = mutableListOf<SelectiveDecoration>()
 
     override fun onDraw(c: Canvas, parent: RecyclerView, state: RecyclerView.State) {
         super.onDrawOver(c, parent, state)
@@ -37,7 +37,7 @@ class Polet: RecyclerView.ItemDecoration(), SelectiveDecoration {
     }
 
     override fun shouldDecorate(view: View, parent: RecyclerView, state: RecyclerView.State): Boolean {
-        selectors.forEach {
+        selectiveDecoration.forEach {
             @Suppress("SimplifyBooleanWithConstants")
             if (it.shouldDecorate(view, parent, state) == false){
                 return false

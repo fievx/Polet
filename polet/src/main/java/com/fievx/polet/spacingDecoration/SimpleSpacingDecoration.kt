@@ -5,10 +5,10 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.fievx.polet.SizingDecoration
 
-class DumbSpacingDecoration(private val l: Int = 0,
-                            private val t: Int = 0,
-                            private val r: Int = 0,
-                            private val b: Int = 0)
+class SimpleSpacingDecoration(private val l: Int = 0,
+                              private val t: Int = 0,
+                              private val r: Int = 0,
+                              private val b: Int = 0)
     : SizingDecoration {
 
     constructor(all: Int = 0): this(all, all, all, all)
