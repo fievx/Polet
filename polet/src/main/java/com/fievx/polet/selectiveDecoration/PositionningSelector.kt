@@ -44,6 +44,13 @@ class PositionningSelector : PositionnningSelectiveDecoration {
             return false
         }
 
+        //check for first item
+        if (isFirstItem && includeFirst) {
+            return true
+        } else if (isFirstItem && !includeFirst) {
+            return false
+        }
+
         //check for first item in view type group
         val isFirstInSameTypeGroup = (isFirstItem && nextViewType == viewType)
                 || (previousViewType != viewType && nextViewType == viewType)
@@ -62,12 +69,7 @@ class PositionningSelector : PositionnningSelectiveDecoration {
             return false
         }
 
-        //check for first item
-        if (isFirstItem && includeFirst) {
-            return true
-        } else if (isFirstItem && !includeFirst) {
-            return false
-        }
+
 
         //check for inner item in view type group
         val isInnerInSameTypeGroup = !isFirstItem && !isLastItem && (previousViewType == viewType)
@@ -84,14 +86,6 @@ class PositionningSelector : PositionnningSelectiveDecoration {
         }
 
         return false
-    }
-
-    fun includeOnlyLastInSameTypeGroup() {
-        includeFirst = false
-        includeInner = false
-        includeInnerInTypeGroup = false
-        includeFirstInSameTypeGroup = false
-        includeLast = false
     }
 
     /**
