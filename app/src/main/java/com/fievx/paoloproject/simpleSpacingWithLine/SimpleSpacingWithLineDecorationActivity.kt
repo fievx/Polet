@@ -9,7 +9,7 @@ import com.fievx.polet.spacingDecoration.SimpleSpacingDecoration
 import com.fievx.polet.Polet
 import com.fievx.polet.drawingDecoration.LineDrawingDecoration
 import com.fievx.polet.drawingDecoration.PaintingDecoration
-import com.fievx.polet.selectiveDecoration.SkippingSelector
+import com.fievx.polet.decorationSelector.SkippingSelector
 import com.fievx.paoloproject.R
 import com.fievx.paoloproject.adapter.AllTextsAdapter
 

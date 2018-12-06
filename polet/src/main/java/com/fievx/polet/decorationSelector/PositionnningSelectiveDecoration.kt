@@ -1,6 +1,6 @@
-package com.fievx.polet.selectiveDecoration
+package com.fievx.polet.decorationSelector
 
-interface PositionnningSelectiveDecoration: SelectiveDecoration {
+interface PositionnningSelectiveDecoration: DecorationSelector {
     var includeFirst: Boolean
     var includeLast: Boolean
     var includeFirstInSameTypeGroup: Boolean

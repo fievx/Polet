@@ -9,7 +9,7 @@ import com.fievx.paoloproject.R
 import com.fievx.paoloproject.adapter.RandomNumberAdapter
 import com.fievx.polet.Polet
 import com.fievx.polet.drawingDecoration.PaintingDecoration
-import com.fievx.polet.selectiveDecoration.DataConditionSelector
+import com.fievx.polet.decorationSelector.DataConditionSelector
 import com.fievx.polet.spacingDecoration.SimpleSpacingDecoration
 
 class ConditionalDecorationActivity : AppCompatActivity() {

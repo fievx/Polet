@@ -8,7 +8,7 @@ import com.fievx.polet.spacingDecoration.SimpleSpacingDecoration
 import com.fievx.polet.Polet
 import com.fievx.paoloproject.R
 import com.fievx.paoloproject.adapter.AllTextsAdapter
-import com.fievx.polet.selectiveDecoration.PositionningSelector
+import com.fievx.polet.decorationSelector.PositionningSelector
 
 class SimpleSpacingDecorationActivity: AppCompatActivity() {
 

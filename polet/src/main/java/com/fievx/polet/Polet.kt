@@ -4,16 +4,16 @@ import android.graphics.Canvas
 import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.fievx.polet.selectiveDecoration.SelectiveDecoration
+import com.fievx.polet.decorationSelector.DecorationSelector
 
 /**
  * Entry point to create a decoration.
  */
-class Polet: RecyclerView.ItemDecoration(), SelectiveDecoration {
+class Polet: RecyclerView.ItemDecoration(), DecorationSelector {
 
     var sizingDecoration : SizingDecoration? = null
     val drawingDecorations = mutableListOf<DrawingDecoration>()
-    val selectiveDecoration = mutableListOf<SelectiveDecoration>()
+    val selectiveDecoration = mutableListOf<DecorationSelector>()
 
     override fun onDraw(c: Canvas, parent: RecyclerView, state: RecyclerView.State) {
         super.onDrawOver(c, parent, state)
