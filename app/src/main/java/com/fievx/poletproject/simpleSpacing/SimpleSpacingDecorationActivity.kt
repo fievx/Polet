@@ -1,4 +1,4 @@
-package com.fievx.paoloproject.simpleSpacing
+package com.fievx.poletproject.simpleSpacing
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -6,8 +6,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.fievx.polet.spacingDecoration.SimpleSpacingDecoration
 import com.fievx.polet.Polet
-import com.fievx.paoloproject.R
-import com.fievx.paoloproject.adapter.AllTextsAdapter
+import com.fievx.poletproject.R
+import com.fievx.poletproject.adapter.AllTextsAdapter
 import com.fievx.polet.decorationSelector.PositionningSelector
 
 class SimpleSpacingDecorationActivity: AppCompatActivity() {

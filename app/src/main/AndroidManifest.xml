@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.fievx.paoloproject">
+          package="com.fievx.poletproject">
 
     <application
             android:allowBackup="true"
@@ -9,17 +9,17 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.fievx.poletproject.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".simpleSpacing.SimpleSpacingDecorationActivity"/>
-        <activity android:name=".simpleSpacingWithLine.SimpleSpacingWithLineDecorationActivity"/>
-        <activity android:name=".conditionnalDecoration.ConditionalDecorationActivity"/>
-        <activity android:name=".complexDecoration.ComplexDecorationActivity"/>
+        <activity android:name="com.fievx.poletproject.simpleSpacing.SimpleSpacingDecorationActivity"/>
+        <activity android:name="com.fievx.poletproject.simpleSpacingWithLine.SimpleSpacingWithLineDecorationActivity"/>
+        <activity android:name="com.fievx.poletproject.conditionnalDecoration.ConditionalDecorationActivity"/>
+        <activity android:name="com.fievx.poletproject.complexDecoration.ComplexDecorationActivity"/>
     </application>
 
 </manifest>

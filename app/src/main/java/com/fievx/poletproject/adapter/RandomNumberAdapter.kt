@@ -1,11 +1,11 @@
-package com.fievx.paoloproject.adapter
+package com.fievx.poletproject.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.fievx.paoloproject.R
+import com.fievx.poletproject.R
 import java.util.*
 
 class RandomNumberAdapter: RecyclerView.Adapter<RandomNumberViewHolder>() {

@@ -1,4 +1,4 @@
-package com.fievx.paoloproject.simpleSpacingWithLine
+package com.fievx.poletproject.simpleSpacingWithLine
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -10,8 +10,8 @@ import com.fievx.polet.Polet
 import com.fievx.polet.drawingDecoration.LineDrawingDecoration
 import com.fievx.polet.drawingDecoration.PaintingDecoration
 import com.fievx.polet.decorationSelector.SkippingSelector
-import com.fievx.paoloproject.R
-import com.fievx.paoloproject.adapter.AllTextsAdapter
+import com.fievx.poletproject.R
+import com.fievx.poletproject.adapter.AllTextsAdapter
 
 class SimpleSpacingWithLineDecorationActivity : AppCompatActivity() {
 

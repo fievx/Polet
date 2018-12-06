@@ -1,13 +1,13 @@
-package com.fievx.paoloproject
+package com.fievx.poletproject
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.fievx.paoloproject.complexDecoration.ComplexDecorationActivity
-import com.fievx.paoloproject.conditionnalDecoration.ConditionalDecorationActivity
-import com.fievx.paoloproject.simpleSpacing.SimpleSpacingDecorationActivity
-import com.fievx.paoloproject.simpleSpacingWithLine.SimpleSpacingWithLineDecorationActivity
+import com.fievx.poletproject.complexDecoration.ComplexDecorationActivity
+import com.fievx.poletproject.conditionnalDecoration.ConditionalDecorationActivity
+import com.fievx.poletproject.simpleSpacing.SimpleSpacingDecorationActivity
+import com.fievx.poletproject.simpleSpacingWithLine.SimpleSpacingWithLineDecorationActivity
 
 class MainActivity : AppCompatActivity() {
 
