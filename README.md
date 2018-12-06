@@ -1,5 +1,6 @@
 # Polet
 A solution to compose RecyclerView Decoration
+[![](https://jitpack.io/v/fievx/Polet.svg)](https://jitpack.io/#fievx/Polet)
 
 The idea is to compose the decoration by reusing small and simple components.
 
@@ -14,7 +15,7 @@ Those elements, all optional, are:
 In isolation, those items are simple and easy to write and understand. But combined (or composed), they can form very complex
 decoration with complex selective conditions. 
 
-### Implementation
+## Implementation
 
 A very basic decoration which adds space around every item: 
 
@@ -43,7 +44,7 @@ addItemDecoration(Polet().apply {
 ```
 ![image](https://image.noelshack.com/fichiers/2018/49/3/1544024782-complex-decoration.png)
 
-## Composing with Decoration Selector
+### Composing with Decoration Selector
 The real power comes when you combine the drawing composition with the selection composition. 
 
 Going back to the previous exemple with the simple spacing decoration, imagine that you want to add an extra spacing over the very first item.
@@ -90,21 +91,42 @@ Here the RecyclerView displays a list of random Ints between 0 and 9 and we need
  ```
 ![image](https://image.noelshack.com/fichiers/2018/49/4/1544091878-conditional-decoration.png)
 
-### Content
+## Content
 
-## SizingDecoration
+### SizingDecoration
  - SimpleSpacingDecoration -> Adds space around the item. Dimention needs to be provided in pixels, not resource id. 
  
-## DrawingDecoration
+### DrawingDecoration
  - PaintingDecoration -> Fills alls the space available with the provided color. Color needs to be provided as a resolved RGB color, not resource id.
  - LineDrawingDecoration -> Draws a line of the specified width and color at the specified location (top, bottom, left or right)
  
-## DecorationSelector
+### DecorationSelector
  - ViewTypeSelector -> Applies the decoration to the selected ViewTypes
  - SkippingSelector -> Applies decoration, then skips the required number of views and repeat
  - PositionningSelector -> Applies decoration to the selected positions: first, last, inner, firstInSameViewTypeGroup, lastInSameViewTypeGroup, innerInSameViewTypeGroup
  - DataConditionSelector -> Applies decoration if the data at the current position matches the provided condition. 
  
 This content is volontarily reduced to keep the library small and still cover many use cases. If you browse throught the code, you will realize that the drawing and selection classes are very simple. So if anything is missing, it should be quite easy to create your own `DrawingDecoration` or `DecorationSelector`
+
+## Install
+The library is available using Jitpack
+
+
+
+Step 1. Add the JitPack repository to your build file
+Add it in your root build.gradle at the end of repositories:
+
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+
+Step 2. Add the dependency
+
+	dependencies {
+	        implementation 'com.github.fievx:Polet:master'
+	}
 
 
