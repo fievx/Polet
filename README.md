@@ -129,4 +129,5 @@ Step 2. Add the dependency
 	        implementation 'com.github.fievx:Polet:<version>'
 	}
 
-
+### Note
+This library is named after a very good friend who had a brief career as an interior designer/decorator. Love++
