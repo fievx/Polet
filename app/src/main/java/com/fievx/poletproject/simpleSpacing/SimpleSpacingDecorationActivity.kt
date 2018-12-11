@@ -35,6 +35,14 @@ class SimpleSpacingDecorationActivity: AppCompatActivity() {
                     includeFirst = true
                 })
             })
+
+            addItemDecoration(Polet().apply {
+                sizingDecoration = SimpleSpacingDecoration(b = spacing * 3)
+                selectiveDecoration.add(PositionningSelector().apply {
+                    excludeAll()
+                    includeLast = true
+                })
+            })
         }
     }
 }

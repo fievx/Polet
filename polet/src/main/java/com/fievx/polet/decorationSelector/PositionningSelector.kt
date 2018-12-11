@@ -22,7 +22,7 @@ class PositionningSelector : PositionnningSelectiveDecoration {
         //gather all necessary info
         val position = parent.getChildAdapterPosition(view)
         val isFirstItem = position == 0
-        val isLastItem = parent.getChildAdapterPosition(view) == parent.adapter?.itemCount ?: 0 - 1
+        val isLastItem = parent.getChildAdapterPosition(view) == (parent.adapter?.itemCount ?: 0) - 1
         val viewType = parent.adapter?.getItemViewType(position)
         val previousViewType = if (position > 0) {
             parent.adapter?.getItemViewType(position - 1)
