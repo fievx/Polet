@@ -7,23 +7,30 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.fievx.poletproject.R
 
-class AllTextsAdapter : RecyclerView.Adapter<AllTextViewHolder>() {
+class AllTextsAdapter : RecyclerView.Adapter<AllTextsAdapter.AllTextViewHolder>() {
+
+    val list = List(100, init = {i -> i})
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AllTextViewHolder {
         return AllTextViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_simple_text, parent, false))
     }
 
     override fun getItemCount(): Int {
-        return 100
+        return list.size
     }
 
     override fun onBindViewHolder(holder: AllTextViewHolder, position: Int) {
         holder.bind()
     }
-}
 
-class AllTextViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    fun bind(){
-        itemView.findViewById<TextView>(R.id.tv).text = "Item ${adapterPosition}"
+    override fun getItemViewType(position: Int): Int {
+        return list[position]
+    }
+
+    inner class AllTextViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        fun bind(){
+            itemView.findViewById<TextView>(R.id.tv).text = "Item ${list[adapterPosition]}"
+        }
     }
 }
+

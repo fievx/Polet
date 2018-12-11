@@ -29,7 +29,7 @@ class PositionningSelector : PositionnningSelectiveDecoration {
         } else {
             -1
         }
-        val nextViewType = if (position < parent.adapter?.itemCount ?: 0 - 1) {
+        val nextViewType = if (position < (parent.adapter?.itemCount ?: 0) - 1) {
             parent.adapter?.getItemViewType(position + 1)
         } else {
             -1
