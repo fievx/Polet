@@ -16,6 +16,13 @@ import androidx.recyclerview.widget.RecyclerView
  *  whether the decoration is drawn or not would depend on the order of the checks.
  *  With [FlexiblePositioningSelector] you can mark the first position as Skip. It will not request drawing, but won't prevent
  *  the last position to draw it if needed.
+ *
+ *  Unlike in [PositioningSelector], all cases get checked unless we find a position marked as Inactive. This means that
+ *  the Inactive is the most eager you can mark a position.
+ *
+ *  In other words, if an item satisfies multiple positions (eg: first and last in case of a single item) and one of those
+ *  positions is marked Inactive while the other is marked Active, the decoration will not be drawn. If in such situation,
+ *  you want the decoration to be drawn, you should change the Inactive to Skip.
  */
 class FlexiblePositioningSelector : DecorationSelector {
     var includeFirst: State = State.Active
@@ -53,16 +60,18 @@ class FlexiblePositioningSelector : DecorationSelector {
             -1
         }
 
+        var shouldDecorate = false
+
         //check for last item
         if (isLastItem && includeLast == State.Active) {
-            return true
+            shouldDecorate = true
         } else if (isLastItem && includeLast == State.Inactive) {
             return false
         }
 
         //check for first item
         if (isFirstItem && includeFirst == State.Active) {
-            return true
+            shouldDecorate = true
         } else if (isFirstItem && includeFirst == State.Inactive) {
             return false
         }
@@ -71,7 +80,7 @@ class FlexiblePositioningSelector : DecorationSelector {
         val isFirstInSameTypeGroup = (isFirstItem && nextViewType == viewType)
                 || (previousViewType != viewType && nextViewType == viewType)
         if (isFirstInSameTypeGroup && includeFirstInSameTypeGroup == State.Active) {
-            return true
+            shouldDecorate = true
         } else if (isFirstInSameTypeGroup && includeFirstInSameTypeGroup == State.Inactive) {
             return false
         }
@@ -80,7 +89,7 @@ class FlexiblePositioningSelector : DecorationSelector {
         val isLastItemInSameTypeGroup = (isLastItem && previousViewType == viewType)
                 || (previousViewType == viewType && nextViewType != viewType)
         if (isLastItemInSameTypeGroup && includeLastInSameTypeGroup == State.Active) {
-            return true
+            shouldDecorate = true
         } else if (isLastItemInSameTypeGroup && includeLastInSameTypeGroup == State.Inactive) {
             return false
         }
@@ -90,17 +99,17 @@ class FlexiblePositioningSelector : DecorationSelector {
         val isInnerInSameTypeGroup = !isFirstItem && !isLastItem && (previousViewType == viewType)
                 && (viewType == nextViewType)
         if (isInnerInSameTypeGroup && includeInnerInTypeGroup == State.Active) {
-            return true
+            shouldDecorate = true
         } else if (isInnerInSameTypeGroup && includeInnerInTypeGroup == State.Inactive) {
             return false
         }
 
         //check for inner item
         if (!isFirstItem && !isLastItem && includeInner == State.Active) {
-            return true
+            shouldDecorate = true
         }
 
-        return false
+        return shouldDecorate
     }
 
     /**
