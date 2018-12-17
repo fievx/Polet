@@ -103,7 +103,8 @@ Here the RecyclerView displays a list of random Ints between 0 and 9 and we need
 ### DecorationSelector
  - ViewTypeSelector -> Applies the decoration to the selected ViewTypes
  - SkippingSelector -> Applies decoration, then skips the required number of views and repeat
- - PositionningSelector -> Applies decoration to the selected positions: first, last, inner, firstInSameViewTypeGroup, lastInSameViewTypeGroup, innerInSameViewTypeGroup
+ - PositioningSelector -> Applies decoration to the selected positions: first, last, inner, firstInSameViewTypeGroup, lastInSameViewTypeGroup, innerInSameViewTypeGroup
+ - FlexiblePositioninSelector -> Provides the same selection as the PositioningSelector but with more options to handle position conflicts. See class documentation for details.
  - DataConditionSelector -> Applies decoration if the data at the current position matches the provided condition. 
  
 This content is volontarily reduced to keep the library small and still cover many use cases. If you browse throught the code, you will realize that the drawing and selection classes are very simple. So if anything is missing, it should be quite easy to create your own `DrawingDecoration` or `DecorationSelector`
