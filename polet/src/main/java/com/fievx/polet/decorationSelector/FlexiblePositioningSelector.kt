@@ -8,8 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
  *  firstInSameTypeGroup, LastInSameTypeGroup, Inner and InnerInSameTypeGroup ; you can either make the position Active,
  *  Inactive or Skip.
  *
- *  Active and Inactive are eager, meaning that they will perform similarly as in the [PositioningSelector].
- *  Skip will not draw the decoration, but will not prevent drawing it either.
+ *  Each State have different level of eagerness ranging from Inactive (the most eager) to Skip (the least eager)
+ *  - Inactive will make sure the decoration is never drawn even if marked Active on a conflicting position.
+ *  - Active  will draw the item unless it is marked Inactive on a conflicting position.
+ *  - Skip will not draw the item unless it is marked Active on a conflicting position.
  *
  *  Example: Say you have a decoration which you don't draw on the first position but only on the last position. A problem
  *  will arise if you only have 1 item in the RV since it will be both first and last. If you were using the [PositioningSelector],
