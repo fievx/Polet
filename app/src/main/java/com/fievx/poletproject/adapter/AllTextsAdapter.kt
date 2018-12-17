@@ -1,5 +1,6 @@
 package com.fievx.poletproject.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +10,7 @@ import com.fievx.poletproject.R
 
 class AllTextsAdapter : RecyclerView.Adapter<AllTextsAdapter.AllTextViewHolder>() {
 
-    val list = List(100, init = {i -> i})
+    val list = List(1, init = {i -> i})
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AllTextViewHolder {
         return AllTextViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_simple_text, parent, false))
@@ -28,6 +29,7 @@ class AllTextsAdapter : RecyclerView.Adapter<AllTextsAdapter.AllTextViewHolder>(
     }
 
     inner class AllTextViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        @SuppressLint("SetTextI18n")
         fun bind(){
             itemView.findViewById<TextView>(R.id.tv).text = "Item ${list[adapterPosition]}"
         }
