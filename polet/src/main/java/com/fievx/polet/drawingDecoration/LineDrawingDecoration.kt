@@ -55,5 +55,3 @@ class LineDrawingDecoration (@ColorInt color: Int, val position: Position, val t
     }
 
 }
-
-fun sumToFloat(vararg nums: Int): Float = nums.sum().toFloat()
