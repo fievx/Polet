@@ -15,10 +15,10 @@ class PaintingDecoration(@ColorInt color: Int): DrawingDecoration {
     }
 
     override fun onDraw(rect: Rect, view: View, c: Canvas, parent: RecyclerView, state: RecyclerView.State) {
-        c.drawRect(view.left - rect.left.toFloat(),
-                view.top - rect.top.toFloat(),
-                view.right + rect.right.toFloat(),
-                view.bottom + rect.bottom.toFloat(),
+        c.drawRect((view.left - rect.left).toFloat(),
+            (view.top - rect.top).toFloat(),
+            (view.right + rect.right).toFloat(),
+            (view.bottom + rect.bottom).toFloat(),
                 paint)
     }
 }
