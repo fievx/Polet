@@ -24,7 +24,7 @@ class LineDrawingDecoration (@ColorInt color: Int, val position: Position, val t
                 c.drawRect((view.left - rect.left).toFloat(),
                     (view.top - rect.top).toFloat(),
                     (view.right + rect.right).toFloat(),
-                    (view.top - rect.top + thickness.toFloat()).toFloat(),
+                    (view.top - rect.top + thickness).toFloat(),
                     paint)
             Position.bottom ->
                 c.drawRect((view.left - rect.left).toFloat(),
