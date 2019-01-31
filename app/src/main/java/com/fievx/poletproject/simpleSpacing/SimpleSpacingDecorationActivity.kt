@@ -45,7 +45,6 @@ class SimpleSpacingDecorationActivity: AppCompatActivity() {
                 selectiveDecoration.add(FlexiblePositioningSelector().apply {
                     skipAll()
                     includeLast = FlexiblePositioningSelector.State.Active
-                    includeFirst = FlexiblePositioningSelector.State.Inactive
                 })
             })
         }

@@ -38,8 +38,7 @@ class SimpleSpacingWithLineDecorationActivity : AppCompatActivity() {
                 drawingDecorations.add(
                     LineDrawingDecoration(
                         black,
-                        LineDrawingDecoration.Position.bottom,
-                        resources.getDimensionPixelSize(R.dimen.line_height)
+                        LineDrawingDecoration.Position.bottom,1
                     )
                 )
                 drawingDecorations.add(

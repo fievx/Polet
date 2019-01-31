@@ -8,9 +8,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.fievx.poletproject.R
 
-class AllTextsAdapter : RecyclerView.Adapter<AllTextsAdapter.AllTextViewHolder>() {
+class AllTextsAdapterWithMultipleTypes : RecyclerView.Adapter<AllTextsAdapterWithMultipleTypes.AllTextViewHolder>() {
 
-    val list = List(100, init = {i -> i})
+    val list = List(50, init = {i -> i})
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AllTextViewHolder {
         return AllTextViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_simple_text, parent, false))
@@ -25,7 +25,16 @@ class AllTextsAdapter : RecyclerView.Adapter<AllTextsAdapter.AllTextViewHolder>(
     }
 
     override fun getItemViewType(position: Int): Int {
-        return list[position]
+        return if (position == 10){
+            typetwo
+        }else {
+            typeOne
+        }
+    }
+
+    companion object {
+        const val typeOne = 1
+        const val typetwo = 2
     }
 
     inner class AllTextViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
