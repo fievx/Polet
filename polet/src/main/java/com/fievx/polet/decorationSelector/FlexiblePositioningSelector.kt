@@ -50,7 +50,11 @@ class FlexiblePositioningSelector : DecorationSelector {
         val position = parent.getChildAdapterPosition(view)
         val isFirstItem = position == 0
         val isLastItem = parent.getChildAdapterPosition(view) == (parent.adapter?.itemCount ?: 0) - 1
-        val viewType = parent.adapter?.getItemViewType(position)
+        val viewType = if (position > 0) {
+            parent.adapter?.getItemViewType(position)
+        } else {
+            -1
+        }
         val previousViewType = if (position > 0) {
             parent.adapter?.getItemViewType(position - 1)
         } else {
