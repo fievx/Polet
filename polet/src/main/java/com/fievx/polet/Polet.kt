@@ -37,9 +37,13 @@ class Polet: RecyclerView.ItemDecoration(), DecorationSelector {
     }
 
     override fun shouldDecorate(view: View, parent: RecyclerView, state: RecyclerView.State): Boolean {
+        @Suppress("SimplifyBooleanWithConstants")
+        val position = parent.getChildAdapterPosition(view)
+        if(position == -1){
+            return false
+        }
+
         selectiveDecoration.forEach {
-            @Suppress("SimplifyBooleanWithConstants")
-            val position = parent.getChildAdapterPosition(view)
             if (position == RecyclerView.NO_POSITION || !it.shouldDecorate(view, parent, state)){
                 return false
             }
